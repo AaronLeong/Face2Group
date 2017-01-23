@@ -1,0 +1,6 @@
+{  
+    "enablePullDownRefresh":true, 
+    "navigationBarTitleText": "群",
+    "navigationBarBackgroundColor": "#363636",
+    "navigationBarTextStyle": "white"
+}

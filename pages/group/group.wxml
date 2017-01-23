@@ -1,0 +1,26 @@
+<import src="../common/searchbar.wxml" />
+<template is="searchbar" data="{{...search}}"/>
+
+<toast hidden="{{toastHidden}}" bindchange="toastChange">
+    {{toastText}}
+</toast>
+<scroll-view scroll-y="true" style="height:100%;">
+<view hidden="{{viewHidden}}">
+   
+    <view wx:for="{{list}}" wx:for-item="item" 
+    data-name="{{item.userinfo[0].username}}"
+    data-phone="{{item.userinfo[0].phone}}" 
+    data-avatar="{{item.userinfo[0].avatarUrl}}" 
+    data-id="{{item.user_id}}" bindtap="goPage">
+        <view class="graySpace" wx:if="{{item.text}}">
+            <text>{{item.text}}</text>
+        </view>
+        <view class="item-avatar-sm">
+            <image src="{{item.userinfo[0].avatarUrl}}" />
+            <view class="padding_half">
+                <text class="title">{{item.userinfo[0].username}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+</scroll-view>

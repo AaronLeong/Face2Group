@@ -1,0 +1,38 @@
+<import src="../common/searchbar.wxml" />
+<loading hidden="{{loadHidden}}">
+  加载中...
+</loading>
+<toast hidden="{{toastHidden}}" bindchange="toastChange">
+  {{toastText}}
+</toast>
+<scroll-view scroll-y="true" style="height:100%;">
+  <template is="searchbar" data="{{...search}}" />
+  <view hidden="{{viewHidden}}">
+    <view>
+      <view class="item-avatar-sm" data-url="../groupcreate/groupcreate" bindtap="goUrl">
+        <image src="/src/image/add.png" />
+        <view class="padding_half">
+          <text class="title">面对面建群</text>
+        </view>
+      </view>
+    </view>
+     <view class="page" wx:if="{{!list}}">
+     <view class="page__bd">
+      <view class="weui-loadmore weui-loadmore_line">
+              <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+      </view>
+     </view>
+  </view>
+    <view wx:for="{{list}}" wx:for-item="item" data-name="{{item.groupinfo[0].group_name}}" data-id="{{item.group_id}}" bindtap="goPage">
+      <view class="graySpace" wx:if="{{item.text}}">
+        <text>{{item.groupinfo[0].group_name}}</text>
+      </view>
+      <view class="item-avatar-sm">
+        <image src="{{url}}{{item.groupinfo[0].group_avatar}}" />
+        <view class="padding_half">
+          <text class="title">{{item.groupinfo[0].group_name}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

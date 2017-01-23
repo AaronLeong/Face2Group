@@ -1,0 +1,56 @@
+<import src="../common/searchbar.wxml" />
+
+<loading hidden="{{loadHidden}}">
+    加载中...
+</loading>
+<toast hidden="{{toastHidden}}" bindchange="toastChange">
+    {{toastText}}
+</toast>
+<scroll-view scroll-y="true" style="height:100%;">
+<template is="searchbar" data="{{...search}}"/>
+<view hidden="{{viewHidden}}">
+    <view>
+        <view class="item-avatar-sm"data-url="../newfriend/newfriend" bindtap="goPage">
+            <image src="/src/image/newFriend.png" />
+            <view class="padding_half">
+                <text class="title">新的朋友</text>
+            </view>
+        </view>
+        <view class="item-avatar-sm"data-url="../ws/ws" bindtap="goPage">
+            <image src="/src/image/friends.png" />
+            <view class="padding_half">
+                <text class="title">群聊</text>
+            </view>
+        </view>
+        <view class="item-avatar-sm"data-url="../ws/ws" bindtap="goPage">
+            <image src="/src/image/label.png" />
+            <view class="padding_half">
+                <text class="title">标签</text>
+            </view>
+        </view>
+        <view class="item-avatar-sm"data-url="../ws/ws" bindtap="goPage">
+            <image src="/src/image/friends_2.png" />
+            <view class="padding_half">
+                <text class="title">公众号</text>
+            </view>
+        </view>
+    </view>
+    
+    <view wx:for="{{list}}" wx:for-item="item">
+        <view class="graySpace" wx:if="{{item.text}}">
+            <text>{{item.text}}</text>
+        </view>
+        <view class="item-avatar-sm"
+         data-id="{{item.friend_id}}" 
+         data-avatar="{{item.userinfo[0].avatarUrl}}" 
+         data-name="{{item.userinfo[0].username}}"
+         data-phone="{{item.userinfo[0].username}}"
+         bindtap="goPage">
+            <image src="{{item.userinfo[0].avatarUrl}}" />
+            <view class="padding_half">
+                <text class="title">{{item.userinfo[0].username}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+</scroll-view>

@@ -1,0 +1,36 @@
+<import src="../common/searchbar.wxml" />
+<toast hidden="{{toastHidden}}" bindchange="toastChange">
+    {{toastText}}
+</toast>
+<scroll-view scroll-y="true">
+  <template is="searchbar" data="{{...search}}"/>
+  <view class="page" wx:if="{{!list}}" hidden="{{viewHidden}}">
+     <view class="page__bd">
+      <view class="weui-loadmore weui-loadmore_line">
+              <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+      </view>
+     </view>
+  </view>
+  <view class="item-avatar-md" hidden="{{viewHidden}}"
+  wx:for="{{list}}" wx:for-item="i" 
+  data-name="{{i.userinfo[0].username}}"
+  data-phone="{{i.userinfo[0].phone}}" 
+  data-id="{{i.friend_id}}" bindtap="goPage" >
+          <image src="{{i.userinfo[0].avatarUrl}}"></image>
+          <view class="item-text">
+            <view class="text_box">
+              <view class="flex">
+                <text class="title">{{i.userinfo[0].username}}</text>
+              </view>
+              <view class="flex">
+                <text class="message">{{i.userinfo[0].phone}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="item-time padding_half">
+            <text class="message">{{i.connect_time}}</text>
+          </view>
+
+      
+  </view>
+</scroll-view>

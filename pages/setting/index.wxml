@@ -1,0 +1,18 @@
+<view class="page">
+    <view class="weui-msg">
+        <view class="weui-msg__icon-area">
+            <icon type="warn" size="93"></icon>
+        </view>
+        <view class="weui-msg__text-area">
+            <view class="weui-msg__title">清理缓存</view>
+            <view class="weui-msg__desc">将删除所有个人和群的联系方式</view>
+        </view>
+        <view class="weui-msg__opr-area">
+            <view class="weui-btn-area">
+                <button class="weui-btn" type="warn" bindtap="clearStorag">确定清除</button>
+                
+            </view>
+        </view>
+       
+    </view>
+</view>

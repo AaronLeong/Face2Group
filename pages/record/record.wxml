@@ -1,0 +1,45 @@
+<import src="../common/searchbar.wxml" />
+
+<!--<modal title="" confirm-text="" no-cancel="true" hidden="{{modalHidden}}" bindconfirm="modalChange">
+  <button>标记未读</button>
+  <button>取消关注</button>
+  <button>删除该聊天</button>
+</modal>-->
+<loading hidden="{{loadHidden}}">
+    加载中...
+</loading>
+<toast hidden="{{toastHidden}}" bindchange="toastChange">
+    {{toastText}}
+</toast>
+<scroll-view scroll-y="true">
+  <template is="searchbar" data="{{...search}}"/>
+  <view class="page" wx:if="{{!list}}" hidden="{{viewHidden}}">
+     <view class="page__bd">
+      <view class="weui-loadmore weui-loadmore_line">
+              <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+      </view>
+     </view>
+  </view>
+  <view class="item-avatar-md" wx:for="{{list}}" wx:for-item="i" wx:for-index="index" data-index="{{index}}" data-username="{{i.userinfo[0].username}}" data-id="{{i.friend_id}}" data-phone="{{i.userinfo[0].phone}}"  bindtap="goPage" hidden="{{viewHidden}}">
+      <!--<view catchlongtap="modalTap" style="width:100%;">-->
+          <view class="marks" wx:if="{{i.connect_nums}}">
+            <text>{{i.connect_nums}}</text>
+          </view>
+          <image src="{{i.userinfo[0].avatarUrl}}"></image>
+          <view class="item-text">
+            <view class="text_box">
+              <view class="flex">
+                <text class="title">{{i.userinfo[0].username}}</text>
+              </view>
+              <view class="flex">
+                <text class="message">{{i.userinfo[0].phone}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="item-time padding_half">
+            <text class="message">{{i.update_time}}</text>
+          </view>
+      <!--</view>-->
+      
+  </view>
+</scroll-view>

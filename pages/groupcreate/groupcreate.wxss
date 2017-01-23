@@ -1,0 +1,78 @@
+.container{
+	background-color: #ffffff;
+ padding: 40rpx  0rpx  0rpx 0rpx;
+}
+
+.weui-cells{
+  margin: 0 80px;
+	background: #ffffff;
+}
+.number{
+  margin: 10px;
+	height:18px;
+	width: 18px;
+  font-size: 40px;
+	text-align: center;
+	line-height: 18px;       
+}
+.number-box{
+	background: #363636;
+}
+.number-null{
+	margin: 10px;
+	height:18px;
+	width: 18px;
+	text-align: center;
+	border-radius: 9px;
+	border-color: green 1px;
+	background:green;
+}
+.user-avatar-row{
+   width: 100%;
+   margin: 0 30rpx auto;
+   text-align: center;
+
+}
+.user-avatar-item {
+	float: left;
+	width: 50px;
+	height: 50px;
+	/*border: solid 5px #000;*/
+	display: block;
+	line-height: 50px;
+	_line-height: 40px;
+	text-align: center;
+	/*margin: 0 -5px -5px 0;*/
+	z-index: 1;
+	position: relative;
+}
+
+.user-avatar-item image{
+  height: 40px;
+  width: 40px;
+  margin: auto
+}
+
+.weui-cells::after {
+ border:none;
+}
+.weui-cells::before {
+ border:none;
+}
+
+/*.weui-grids {
+border-right:none;
+border-left:none;
+position:absolute;
+margin-bottom: 0px;
+width: 100%;
+}
+.weui-grid {
+padding:10px 0px;
+
+box-sizing:border-box;
+text-align:center;
+}
+.weui-right-none{
+	border-right:none;
+}*/

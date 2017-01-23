@@ -1,0 +1,62 @@
+<view class="container">
+  <view class="page-body">
+     <view class="page-section">
+      <view class="page-section-title">
+        <text class="flex-center">和身边的朋友输入同样的四个数字</text>
+      </view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input flex-center" >
+            <text wx:for="{{number}}" wx:for-item="item" class="{{item[0]}}">{{item[1]}}
+            </text>
+        </view>
+      </view>
+    </view>
+    <view class="page-section" >
+      <view class="page-section-title">
+        <!--<text class="flex-center">和身边的朋友输入同样的四个数字</text>-->
+      </view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input class="weui-input" auto-focus maxlength="4" type="number" bindinput="bindKeyInput"  placeholder="输入暗号"/>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="page-body" hidden="{{memberListHidden}}">
+    <view class="page-section">
+      <view class="page-section-title">
+        <text class="flex-center">这些朋友也将进入群中</text>
+      </view>
+      <view class="user-avatar-row" wx:for="{{memberList}}" wx:for-item="item">
+        <view class="user-avatar-item">
+          <image src="{{item.userinfo[0].avatarUrl}}"></image>
+        </view>
+      </view>
+    </view>
+   </view>
+    <view class="page-body" hidden="{{selectHidden}}">
+    <view class="btn-area" id="buttonContainer">
+     <button type="primary"  loading="{{loading}}" 
+        disabled="{{disabled}}" bindtap="selectGroup" hover-class="other-button-hover" > 进入该群 </button>
+    </view>
+  </view>
+  <!--<view class="page-body">
+    <view class="weui-grids">
+       <view class="weui-grid ">1</view>
+       <view class="weui-grid ">2</view>
+       <view class="weui-grid weui-right-none">3</view>
+       <view class="weui-grid ">4</view>
+       <view class="weui-grid ">5</view>
+       <view class="weui-grid weui-right-none">6</view>
+       <view class="weui-grid ">7</view>
+       <view class="weui-grid ">8</view>
+       <view class="weui-grid weui-right-none">9</view>
+       <view class="weui-grid ">7</view>
+       <view class="weui-grid ">0</view>
+       <view class="weui-grid weui-right-none">x</view>
+    </view>
+  </view>-->
+</view>
+
+
+

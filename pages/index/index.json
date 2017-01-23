@@ -1,0 +1,6 @@
+{
+    "enablePullDownRefresh":true, 
+    "navigationBarBackgroundColor": "#363636",
+    "navigationBarTextStyle": "white",   
+    "navigationBarTitleText": "最近通话"
+}

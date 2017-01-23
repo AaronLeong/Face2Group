@@ -1,0 +1,39 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/user/user",
+    "pages/contactlist/contactlist",
+    "pages/grouplist/grouplist",
+    "pages/groupcreate/groupcreate",
+    "pages/group/group",
+    "pages/me/me",
+    "pages/edit/index",
+    "pages/setting/index",
+    "pages/help/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Contact",
+    "navigationBarTextStyle":"black"
+  },
+   "tabBar": {
+    "list": [
+    {
+      "pagePath": "pages/index/index",
+      "text": "最近通话",
+      "iconPath":"src/image/time.png",
+      "selectedIconPath":"src/image/time_2.png"
+    }, {
+      "pagePath": "pages/grouplist/grouplist",
+      "text": "群",
+     "iconPath":"src/image/contact.png",
+      "selectedIconPath":"src/image/contact_2.png"
+    }, {
+      "pagePath": "pages/me/me",
+      "text": "我",
+      "iconPath":"src/image/me.png",
+      "selectedIconPath":"src/image/me_2.png"
+    }]
+  }
+}

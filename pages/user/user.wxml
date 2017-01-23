@@ -1,0 +1,18 @@
+<view>
+    <view class="page-top">
+        <text class="username">{{user.phone}}</text>
+        <text class="text-info"></text>
+        <view class="page-btn-wrap">
+            <button class="page-btn" bindtap="makePhoneCall">拨打电话</button>
+        </view>
+    </view>
+    <view class="page-bottom">
+    
+        <view class="weui-cells__title">通话记录</view>
+        <view class="weui-cells weui-cells_after-title" >
+            <view class="weui-cell" wx:for="{{list}}" wx:for-item="item" bindtap="makePhoneCall">
+                <view class="weui-cell__ft">{{item.connect_time}}</view>
+            </view>
+        </view>
+    </view>
+</view>
