@@ -11,7 +11,7 @@
         </view>
       </view>
     </view>
-    <view class="page-section" >
+    <view class="page-section" hidden="true">
       <view class="page-section-title">
         <!--<text class="flex-center">和身边的朋友输入同样的四个数字</text>-->
       </view>
